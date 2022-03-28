@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "666953506963",
+    "project_id": "absen-pasti",
+    "storage_bucket": "absen-pasti.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:666953506963:android:a13ef6dd4cdb0051b0ed66",
+        "android_client_info": {
+          "package_name": "com.absenpasti"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "666953506963-ripor2a2p47uhcqb67hpqafs3ghkf8p3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDn4UC3wwjvvOPOyWhHA5MWNcHuIUgJ1vQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "666953506963-ripor2a2p47uhcqb67hpqafs3ghkf8p3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
