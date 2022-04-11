@@ -37,7 +37,7 @@ export default function ({ navigation, route }) {
   const getDataBarang = () => {
     getData('user').then(res => {
       axios
-        .post('https://absen.zavalabs.com/api/absen.php', {
+        .post('https://absenpasti.zavalabs.com/api/absen.php', {
           id_user: res.id,
         })
         .then(x => {
@@ -100,7 +100,7 @@ export default function ({ navigation, route }) {
             style={{
               fontSize: windowWidth / 30,
               textAlign: 'center',
-              color: colors.secondary,
+              color: colors.primary,
             }}>
             {item.jam_masuk}
           </Text>
@@ -144,11 +144,19 @@ export default function ({ navigation, route }) {
             style={{
               fontSize: windowWidth / 30,
               textAlign: 'center',
-              color: colors.secondary,
+              color: colors.primary,
             }}>
             {item.jam_pulang}
           </Text>
         </View>
+      </View>
+      <View style={{ justifyContent: 'center', alignItems: 'center', backgroundColor: colors.secondary, padding: 10 }}>
+        <Text style={{
+          fontSize: windowWidth / 25,
+          fontFamily: fonts.secondary[600],
+          textAlign: 'center',
+          color: colors.primary,
+        }}>{item.nama_pelajaran}</Text>
       </View>
     </TouchableOpacity>
   );

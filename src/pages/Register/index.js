@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import {
   StyleSheet,
   Text,
@@ -11,14 +11,14 @@ import {
   Switch,
   SafeAreaView,
 } from 'react-native';
-import {colors} from '../../utils/colors';
-import {fonts} from '../../utils/fonts';
-import {MyInput, MyGap, MyButton, MyPicker} from '../../components';
+import { colors } from '../../utils/colors';
+import { fonts } from '../../utils/fonts';
+import { MyInput, MyGap, MyButton, MyPicker } from '../../components';
 import axios from 'axios';
-import {showMessage} from 'react-native-flash-message';
+import { showMessage } from 'react-native-flash-message';
 import LottieView from 'lottie-react-native';
 
-export default function Register({navigation}) {
+export default function Register({ navigation }) {
   const windowWidth = Dimensions.get('window').width;
   const windowHeight = Dimensions.get('window').height;
   const [loading, setLoading] = useState(false);
@@ -31,11 +31,11 @@ export default function Register({navigation}) {
     let reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     if (reg.test(text) === false) {
       // console.log('Email is Not Correct');
-      setData({...data, email: text});
+      setData({ ...data, email: text });
       setValid(false);
       return false;
     } else {
-      setData({...data, email: text});
+      setData({ ...data, email: text });
       setValid(true);
       // console.log('Email is Correct');
     }
@@ -86,7 +86,7 @@ export default function Register({navigation}) {
       setLoading(true);
       console.log(data);
       axios
-        .post('https://absen.zavalabs.com/api/register.php', data)
+        .post('https://absenpasti.zavalabs.com/api/register.php', data)
         .then(res => {
           console.log(res);
           let err = res.data.split('#');

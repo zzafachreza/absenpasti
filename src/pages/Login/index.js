@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   StyleSheet,
   Text,
@@ -10,15 +10,15 @@ import {
   ImageBackground,
   SafeAreaView,
 } from 'react-native';
-import {colors} from '../../utils/colors';
-import {fonts} from '../../utils/fonts';
-import {MyInput, MyGap, MyButton} from '../../components';
+import { colors } from '../../utils/colors';
+import { fonts } from '../../utils/fonts';
+import { MyInput, MyGap, MyButton } from '../../components';
 import LottieView from 'lottie-react-native';
 import axios from 'axios';
-import {storeData, getData} from '../../utils/localStorage';
-import {showMessage} from 'react-native-flash-message';
+import { storeData, getData } from '../../utils/localStorage';
+import { showMessage } from 'react-native-flash-message';
 
-export default function Login({navigation}) {
+export default function Login({ navigation }) {
   const windowWidth = Dimensions.get('window').width;
   const windowHeight = Dimensions.get('window').height;
   const [loading, setLoading] = useState(false);
@@ -56,7 +56,7 @@ export default function Login({navigation}) {
       console.log(data);
       setTimeout(() => {
         axios
-          .post('https://absen.zavalabs.com/api/login.php', data)
+          .post('https://absenpasti.zavalabs.com/api/login.php', data)
           .then(res => {
             console.log(res.data);
             setLoading(false);
@@ -68,7 +68,7 @@ export default function Login({navigation}) {
             } else {
               storeData('user', res.data);
               axios
-                .post('https://absen.zavalabs.com/api/update_token.php', {
+                .post('https://absenpasti.zavalabs.com/api/update_token.php', {
                   id_member: res.data.id,
                   token: token,
                 })
@@ -104,7 +104,7 @@ export default function Login({navigation}) {
             source={require('../../assets/logo.png')}
             style={{
               resizeMode: 'contain',
-              aspectRatio: 0.8,
+              aspectRatio: 0.5,
             }}
           />
         </View>
@@ -161,7 +161,7 @@ export default function Login({navigation}) {
           source={require('../../assets/animation.json')}
           autoPlay
           loop
-          style={{backgroundColor: colors.primary}}
+          style={{ backgroundColor: colors.primary }}
         />
       )}
     </ImageBackground>

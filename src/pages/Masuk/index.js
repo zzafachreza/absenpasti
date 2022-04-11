@@ -12,7 +12,7 @@ import {
 } from 'react-native';
 import { colors } from '../../utils/colors';
 import { fonts } from '../../utils/fonts';
-import { MyInput, MyGap, MyButton } from '../../components';
+import { MyInput, MyGap, MyButton, MyPicker } from '../../components';
 import axios from 'axios';
 import LottieView from 'lottie-react-native';
 import { getData, storeData } from '../../utils/localStorage';
@@ -28,6 +28,7 @@ export default function Masuk({ navigation, route }) {
   const [loading, setLoading] = useState(true);
   const [latitude, setLatitude] = useState('');
   const [longitude, setLongitude] = useState('');
+  const [pelajaran, setPelajaran] = useState([]);
   const [data, setData] = useState({
     nama_lengkap: null,
     email: null,
@@ -41,7 +42,8 @@ export default function Masuk({ navigation, route }) {
   const [kirim, setKirim] = useState({
     foto: null,
     jenis: 'MASUK',
-    tipe: route.params.jenis
+    tipe: route.params.jenis,
+    ref_pelajaran: ''
   });
 
   const options = {
@@ -79,10 +81,19 @@ export default function Masuk({ navigation, route }) {
   useEffect(() => {
 
     axios
-      .get('https://absen.zavalabs.com/api/company.php')
+      .get('https://absenpasti.zavalabs.com/api/company.php')
       .then(tol => {
         setToleransi(tol.data.toleransi);
       });
+
+
+    axios
+      .get('https://absenpasti.zavalabs.com/api/absen_pelajaran.php')
+      .then(xx => {
+        setPelajaran(xx.data);
+        console.error(xx.data)
+      });
+
 
 
 
@@ -138,7 +149,7 @@ export default function Masuk({ navigation, route }) {
 
 
       axios
-        .post('https://absen.zavalabs.com/api/absen_add.php', kirim)
+        .post('https://absenpasti.zavalabs.com/api/absen_add.php', kirim)
         .then(x => {
           setLoading(false);
           alert('Absensi Masuk Berhasil Di Kirim');
@@ -259,6 +270,20 @@ export default function Masuk({ navigation, route }) {
             onPress={() => getCamera(1)}
           />
         </View>
+      </View>
+      <View>
+
+        <MyPicker
+          onValueChange={x =>
+            setKirim({
+              ...kirim,
+              ref_pelajaran: x,
+            })
+          }
+          iconname="list"
+          label="Pilih Pelajaran"
+          data={pelajaran}
+        />
       </View>
 
       <MyButton

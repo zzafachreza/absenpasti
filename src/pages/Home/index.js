@@ -79,7 +79,7 @@ export default function Home({ navigation }) {
       setUser(res);
 
       axios
-        .post('https://absen.zavalabs.com/api/point.php', {
+        .post('https://absenpasti.zavalabs.com/api/point.php', {
           id_member: res.id,
         })
         .then(respoint => {
@@ -94,7 +94,7 @@ export default function Home({ navigation }) {
     });
 
     axios
-      .post('https://absen.zavalabs.com/api/update_token.php', {
+      .post('https://absenpasti.zavalabs.com/api/update_token.php', {
         id_member: user.id,
         token: token,
       })

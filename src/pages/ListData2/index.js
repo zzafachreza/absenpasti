@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   StyleSheet,
   Text,
@@ -11,18 +11,18 @@ import {
   TouchableOpacity,
   Alert,
 } from 'react-native';
-import {storeData, getData} from '../../utils/localStorage';
+import { storeData, getData } from '../../utils/localStorage';
 import axios from 'axios';
-import {colors} from '../../utils/colors';
-import {windowWidth, fonts} from '../../utils/fonts';
-import {Icon} from 'react-native-elements';
+import { colors } from '../../utils/colors';
+import { windowWidth, fonts } from '../../utils/fonts';
+import { Icon } from 'react-native-elements';
 
 const wait = timeout => {
   return new Promise(resolve => {
     setTimeout(resolve, timeout);
   });
 };
-export default function ({navigation, route}) {
+export default function ({ navigation, route }) {
   const [refreshing, setRefreshing] = React.useState(false);
   const [data, setData] = useState([]);
 
@@ -39,7 +39,7 @@ export default function ({navigation, route}) {
   const getDataBarang = () => {
     getData('user').then(res => {
       axios
-        .post('https://absen.zavalabs.com/api/absen_izin.php', {
+        .post('https://absenpasti.zavalabs.com/api/absen_izin.php', {
           id_user: res.id,
         })
         .then(x => {
@@ -49,7 +49,7 @@ export default function ({navigation, route}) {
     });
   };
 
-  const renderItem = ({item}) => (
+  const renderItem = ({ item }) => (
     <View
       style={{
         padding: 10,
@@ -57,7 +57,7 @@ export default function ({navigation, route}) {
         backgroundColor: 'white',
         elevation: 1,
       }}>
-      <View style={{flexDirection: 'row', padding: 10}}>
+      <View style={{ flexDirection: 'row', padding: 10 }}>
         <Text
           style={{
             flex: 1,
@@ -107,7 +107,7 @@ export default function ({navigation, route}) {
             {item.jam_masuk}
           </Text>
         </View>
-        <View style={{justifyContent: 'center', alignItems: 'center', flex: 1}}>
+        <View style={{ justifyContent: 'center', alignItems: 'center', flex: 1 }}>
           <Text
             style={{
               fontSize: windowWidth / 35,
@@ -189,7 +189,7 @@ export default function ({navigation, route}) {
                   onPress: () => {
                     axios
                       .post(
-                        'https://absen.zavalabs.com/api/absen_izin_hapus.php',
+                        'https://absenpasti.zavalabs.com/api/absen_izin_hapus.php',
                         {
                           id_izin: item.id_izin,
                         },

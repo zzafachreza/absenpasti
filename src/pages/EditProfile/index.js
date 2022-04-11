@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   StyleSheet,
   Text,
@@ -10,16 +10,16 @@ import {
   Dimensions,
   SafeAreaView,
 } from 'react-native';
-import {colors} from '../../utils/colors';
-import {fonts} from '../../utils/fonts';
-import {MyInput, MyGap, MyButton} from '../../components';
+import { colors } from '../../utils/colors';
+import { fonts } from '../../utils/fonts';
+import { MyInput, MyGap, MyButton } from '../../components';
 import axios from 'axios';
 import LottieView from 'lottie-react-native';
-import {getData, storeData} from '../../utils/localStorage';
-import {launchCamera, launchImageLibrary} from 'react-native-image-picker';
-import {showMessage} from 'react-native-flash-message';
+import { getData, storeData } from '../../utils/localStorage';
+import { launchCamera, launchImageLibrary } from 'react-native-image-picker';
+import { showMessage } from 'react-native-flash-message';
 
-export default function EditProfile({navigation, route}) {
+export default function EditProfile({ navigation, route }) {
   navigation.setOptions({
     title: 'Edit Profile',
   });
@@ -48,7 +48,7 @@ export default function EditProfile({navigation, route}) {
       } else if (response.error) {
         console.log('Image Picker Error: ', response.error);
       } else {
-        let source = {uri: response.uri};
+        let source = { uri: response.uri };
         switch (xyz) {
           case 1:
             setData({
@@ -72,7 +72,7 @@ export default function EditProfile({navigation, route}) {
         console.log('Image Picker Error: ', response.error);
       } else {
         if (response.fileSize <= 200000) {
-          let source = {uri: response.uri};
+          let source = { uri: response.uri };
           switch (xyz) {
             case 1:
               setData({
@@ -102,7 +102,7 @@ export default function EditProfile({navigation, route}) {
   const simpan = () => {
     setLoading(true);
     console.log('kirim edit', data);
-    axios.post('https://absen.zavalabs.com/api/profile.php', data).then(res => {
+    axios.post('https://absenpasti.zavalabs.com/api/profile.php', data).then(res => {
       console.log(res);
       storeData('user', res.data);
       setLoading(false);

@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import {
   StyleSheet,
   Text,
@@ -9,15 +9,15 @@ import {
   Image,
   Animated,
 } from 'react-native';
-import {colors} from '../../utils/colors';
-import {fonts} from '../../utils/fonts';
-import {color, asin} from 'react-native-reanimated';
-import {getData, storeData} from '../../utils/localStorage';
-import {PermissionsAndroid} from 'react-native';
+import { colors } from '../../utils/colors';
+import { fonts } from '../../utils/fonts';
+import { color, asin } from 'react-native-reanimated';
+import { getData, storeData } from '../../utils/localStorage';
+import { PermissionsAndroid } from 'react-native';
 import LottieView from 'lottie-react-native';
 import axios from 'axios';
 
-export default function Splash({navigation}) {
+export default function Splash({ navigation }) {
   const windowWidth = Dimensions.get('window').width;
   const windowHeight = Dimensions.get('window').height;
   const scaleLogo = new Animated.Value(0.1);
@@ -95,35 +95,12 @@ export default function Splash({navigation}) {
               resizeMode: 'contain',
               // resizeMode: 'center',
 
-              height: 200,
+              height: 300,
               aspectRatio: scaleLogo,
             }}
           />
         </View>
-        <Animated.View
-          style={{
-            top: scaleText,
-            padding: 15,
-          }}>
-          <Text
-            style={{
-              fontFamily: fonts.secondary[800],
-              fontSize: windowWidth / 9,
-              color: colors.white,
-              textAlign: 'center',
-            }}>
-            Z - ABSEN
-          </Text>
-          <Text
-            style={{
-              fontFamily: fonts.secondary[600],
-              fontSize: windowWidth / 20,
-              color: colors.white,
-              textAlign: 'center',
-            }}>
-            By ZAVALABS Mobile Apps
-          </Text>
-        </Animated.View>
+
       </View>
     </SafeAreaView>
   );

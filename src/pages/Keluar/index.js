@@ -133,7 +133,7 @@ export default function Masuk({ navigation, route }) {
       setLoading(true);
 
       axios
-        .post('https://absen.zavalabs.com/api/absen_add.php', kirim)
+        .post('https://absenpasti.zavalabs.com/api/absen_add.php', kirim)
         .then(x => {
           setLoading(false);
           alert('Absensi Pulang Berhasil Di Kirim');
