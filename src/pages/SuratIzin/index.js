@@ -230,16 +230,8 @@ export default function SuratIzin({ navigation }) {
               value: 'SAKIT',
             },
             {
-              label: 'IZIN KHUSUS',
-              value: 'IZIN KHUSUS',
-            },
-            {
-              label: 'IZIN BIASA',
-              value: 'IZIN BIASA',
-            },
-            {
-              label: 'CUTI',
-              value: 'CUTI',
+              label: 'IZIN',
+              value: 'IZIN',
             },
           ]}
         />

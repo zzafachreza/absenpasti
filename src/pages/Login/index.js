@@ -41,11 +41,11 @@ export default function Login({ navigation }) {
   const masuk = () => {
     if (data.nip.length === 0 && data.password.length === 0) {
       showMessage({
-        message: 'Maaf nip dan Password masih kosong !',
+        message: 'Maaf Nis dan Password masih kosong !',
       });
     } else if (data.nip.length === 0) {
       showMessage({
-        message: 'Maaf nip masih kosong !',
+        message: 'Maaf Nis masih kosong !',
       });
     } else if (data.password.length === 0) {
       showMessage({
@@ -122,7 +122,7 @@ export default function Login({ navigation }) {
 
           <MyGap jarak={20} />
           <MyInput
-            label="NIP"
+            label="NIS"
             iconname="card"
             value={data.nip}
             onChangeText={value =>

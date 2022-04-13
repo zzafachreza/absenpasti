@@ -201,7 +201,7 @@ export default function Masuk({ navigation, route }) {
               fontFamily: fonts.secondary[800],
               fontSize: windowWidth / 25,
               color: colors.zavalabs
-            }}>OFFICE / KANTOR - {jarak} Meter</Text>
+            }}>SEKOLAH - {jarak} Meter</Text>
 
 
         )}
@@ -251,7 +251,7 @@ export default function Masuk({ navigation, route }) {
       <MyButton
         title="PULANG SEKARANG"
         Icons="cloud-upload-outline"
-        warna={colors.primary}
+        warna={colors.danger}
         iconColor={colors.white}
         colorText={colors.white}
         onPress={simpan}

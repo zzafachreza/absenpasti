@@ -13,7 +13,7 @@ export default function ({ navigation }) {
             }}>
             <TouchableOpacity
                 onPress={() => navigation.navigate('Akses', {
-                    jenis: 'KANTOR'
+                    jenis: 'SEKOLAH'
                 })}
                 style={{
                     flex: 1,
@@ -36,12 +36,12 @@ export default function ({ navigation }) {
                         color: colors.white,
                         fontSize: windowWidth / 15,
                     }}>
-                    OFFICE / KANTOR
+                    SEKOLAH
                 </Text>
             </TouchableOpacity>
             <TouchableOpacity
                 onPress={() => navigation.navigate('Akses', {
-                    jenis: 'DINAS LUAR'
+                    jenis: 'RUMAH'
                 })}
                 style={{
                     flex: 1,
@@ -64,7 +64,8 @@ export default function ({ navigation }) {
                         color: colors.white,
                         fontSize: windowWidth / 15,
                     }}>
-                    DINAS LUAR / WFH
+
+                    RUMAH
                 </Text>
             </TouchableOpacity>
         </View>

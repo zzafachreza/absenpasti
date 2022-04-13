@@ -17,7 +17,7 @@ export default function Akses({ navigation, route }) {
         })}
         style={{
           flex: 1,
-          backgroundColor: colors.secondary,
+          backgroundColor: colors.success,
           padding: 10,
           justifyContent: 'center',
           alignItems: 'center',

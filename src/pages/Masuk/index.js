@@ -289,7 +289,7 @@ export default function Masuk({ navigation, route }) {
       <MyButton
         title="MASUK SEKARANG"
         Icons="cloud-upload-outline"
-        warna={colors.secondary}
+        warna={colors.primary}
         iconColor={colors.white}
         colorText={colors.white}
         onPress={simpan}

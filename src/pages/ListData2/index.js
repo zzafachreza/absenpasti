@@ -62,7 +62,7 @@ export default function ({ navigation, route }) {
           style={{
             flex: 1,
             fontSize: windowWidth / 30,
-            color: colors.secondary,
+            color: colors.primary,
             fontFamily: fonts.secondary[600],
           }}>
           {item.nama_lengkap}
@@ -130,7 +130,7 @@ export default function ({ navigation, route }) {
                   : 'mail-unread-outline'
               }
               color={
-                item.status == 'DISETUJUI' ? colors.secondary : colors.primary
+                item.status == 'DISETUJUI' ? colors.success : item.status == 'DITOLAK' ? colors.danger : colors.primary
               }
             />
             <Text
@@ -139,9 +139,7 @@ export default function ({ navigation, route }) {
                 fontSize: windowWidth / 35,
                 textAlign: 'center',
                 color:
-                  item.status == 'DISETUJUI'
-                    ? colors.secondary
-                    : colors.primary,
+                  item.status == 'DISETUJUI' ? colors.success : item.status == 'DITOLAK' ? colors.danger : colors.primary
               }}>
               {item.status}
             </Text>
